@@ -4,7 +4,7 @@ const menuButton = document.querySelector('.site-nav__toggle')
 const menuDrawer = document.querySelector('.site-nav__drawer')
 const menuLinks = [...document.querySelectorAll('.site-nav__links a')]
 const menuButtonLabel = menuButton.querySelector('[aria-hidden="true"]')
-const desktopMedia = window.matchMedia('(min-width: 768px)')
+const desktopMedia = window.matchMedia('(min-width: 900px)')
 
 const setMenuState = (isOpen, { returnFocus = false } = {}) => {
   if (desktopMedia.matches) {
