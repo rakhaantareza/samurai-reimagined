@@ -1,60 +1,72 @@
 import './style.css'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${javascriptLogo}" class="framework" alt="JavaScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const menuButton = document.querySelector('.site-nav__toggle')
+const menuDrawer = document.querySelector('.site-nav__drawer')
+const menuLinks = [...document.querySelectorAll('.site-nav__links a')]
+const menuButtonLabel = menuButton.querySelector('[aria-hidden="true"]')
+const desktopMedia = window.matchMedia('(min-width: 768px)')
 
-<div class="ticks"></div>
+const setMenuState = (isOpen, { returnFocus = false } = {}) => {
+  if (desktopMedia.matches) {
+    document.body.classList.remove('nav-open')
+    menuDrawer.removeAttribute('data-open')
+    menuDrawer.removeAttribute('aria-hidden')
+    menuButton.setAttribute('aria-expanded', 'false')
+    menuButton.setAttribute('aria-label', 'Open navigation menu')
+    menuButtonLabel.textContent = 'MENU'
+    return
+  }
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-          <img class="button-icon" src="${javascriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+  document.body.classList.toggle('nav-open', isOpen)
+  menuDrawer.toggleAttribute('data-open', isOpen)
+  menuDrawer.setAttribute('aria-hidden', String(!isOpen))
+  menuButton.setAttribute('aria-expanded', String(isOpen))
+  menuButton.setAttribute(
+    'aria-label',
+    isOpen ? 'Close navigation menu' : 'Open navigation menu',
+  )
+  menuButtonLabel.textContent = isOpen ? 'CLOSE' : 'MENU'
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+  if (isOpen) {
+    menuLinks[0]?.focus()
+  } else if (returnFocus) {
+    menuButton.focus()
+  }
+}
 
-setupCounter(document.querySelector('#counter'))
+menuButton.addEventListener('click', () => {
+  const isOpen = menuButton.getAttribute('aria-expanded') === 'true'
+  setMenuState(!isOpen)
+})
+
+menuLinks.forEach((link) => {
+  link.addEventListener('click', () => setMenuState(false))
+})
+
+document.addEventListener('keydown', (event) => {
+  const isOpen = menuButton.getAttribute('aria-expanded') === 'true'
+
+  if (!isOpen || desktopMedia.matches) return
+
+  if (event.key === 'Escape') {
+    setMenuState(false, { returnFocus: true })
+    return
+  }
+
+  if (event.key !== 'Tab') return
+
+  const focusableItems = [menuButton, ...menuLinks]
+  const firstItem = focusableItems[0]
+  const lastItem = focusableItems[focusableItems.length - 1]
+
+  if (event.shiftKey && document.activeElement === firstItem) {
+    event.preventDefault()
+    lastItem.focus()
+  } else if (!event.shiftKey && document.activeElement === lastItem) {
+    event.preventDefault()
+    firstItem.focus()
+  }
+})
+
+desktopMedia.addEventListener('change', () => setMenuState(false))
+setMenuState(false)

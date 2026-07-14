@@ -1,0 +1,72 @@
+html {
+  color-scheme: dark;
+  background: var(--wf-bg);
+}
+
+body {
+  background: var(--wf-bg);
+  color: var(--wf-text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--wf-text);
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+p,
+li,
+a {
+  overflow-wrap: break-word;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  border: 0;
+  background: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--wf-text);
+  outline-offset: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: -5rem;
+  left: var(--page-gutter);
+  padding: 0.75rem 1rem;
+  background: var(--wf-text);
+  color: var(--wf-bg);
+  font-weight: 700;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+em {
+  font-family: var(--font-heading);
+  font-size: 1.06em;
+}
+
+main {
+  display: block;
+}

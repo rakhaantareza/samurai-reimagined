@@ -1,0 +1,29 @@
+:root {
+  --wf-bg: #111111;
+  --wf-surface: #1b1b1b;
+  --wf-surface-2: #252525;
+  --wf-text: #f1f1f1;
+  --wf-muted: #9d9d9d;
+  --wf-line: rgba(255, 255, 255, 0.14);
+  --wf-accent: #777777;
+  --wf-overlay: rgba(17, 17, 17, 0.78);
+
+  --font-heading: Georgia, 'Times New Roman', serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  --page-max: 1360px;
+  --content-max: 1240px;
+  --reading-max: 680px;
+  --page-gutter: 20px;
+  --section-space: 104px;
+  --nav-height: 72px;
+
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+  --space-8: 6rem;
+}

@@ -1,0 +1,127 @@
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: var(--space-3);
+}
+
+.section-index {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: var(--wf-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.section-index::after {
+  content: '/';
+  color: var(--wf-accent);
+}
+
+.section-eyebrow,
+.fact-block__label {
+  color: var(--wf-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  max-width: 13ch;
+  font-size: clamp(2.75rem, 11vw, 3.5rem);
+}
+
+.body-large {
+  max-width: var(--reading-max);
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 5vw, 1.4rem);
+  line-height: 1.45;
+}
+
+.wireframe-note {
+  color: var(--wf-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+.image-placeholder {
+  position: relative;
+  display: grid;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--wf-line);
+  background:
+    linear-gradient(135deg, transparent 49.8%, var(--wf-line) 50%, transparent 50.2%),
+    linear-gradient(45deg, transparent 49.8%, var(--wf-line) 50%, transparent 50.2%),
+    var(--wf-surface-2);
+}
+
+.image-placeholder--portrait {
+  min-height: 420px;
+  aspect-ratio: 4 / 5;
+}
+
+.image-placeholder__label {
+  place-self: center;
+  padding: 0.65rem 0.8rem;
+  border: 1px solid var(--wf-line);
+  background: var(--wf-bg);
+  color: var(--wf-muted);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.image-placeholder__caption {
+  align-self: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.8rem;
+  padding: 0.8rem;
+  border-top: 1px solid var(--wf-line);
+  background: rgba(17, 17, 17, 0.9);
+  color: var(--wf-muted);
+  font-size: 0.68rem;
+  line-height: 1.4;
+}
+
+.image-placeholder__caption strong {
+  color: var(--wf-text);
+  letter-spacing: 0.08em;
+}
+
+.fact-block {
+  padding: var(--space-4);
+  border-block: 1px solid var(--wf-line);
+  background: var(--wf-surface);
+}
+
+.fact-block__label {
+  margin-bottom: var(--space-3);
+  color: var(--wf-text);
+}
+
+.pull-quote {
+  max-width: 32ch;
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 8vw, 2.4rem);
+  line-height: 1.15;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

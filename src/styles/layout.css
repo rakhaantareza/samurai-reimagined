@@ -1,0 +1,28 @@
+.container {
+  width: min(calc(100% - (var(--page-gutter) * 2)), var(--content-max));
+  margin-inline: auto;
+}
+
+.container--wide {
+  max-width: var(--page-max);
+}
+
+.section {
+  padding-block: var(--section-space);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-height) + 1rem);
+}
+
+.section-header {
+  max-width: 56rem;
+}
+
+.prose {
+  max-width: var(--reading-max);
+}
+
+.prose > * + * {
+  margin-top: 1.25rem;
+}

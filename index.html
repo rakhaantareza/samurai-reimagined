@@ -2,12 +2,179 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>samurai-reimagined</title>
+    <meta name="color-scheme" content="dark" />
+    <meta
+      name="description"
+      content="Explore the rise, philosophy, warfare, transformation, decline, and cultural legacy of the samurai through an immersive interactive web experience."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="History of Samurai — Reimagined" />
+    <meta
+      property="og:description"
+      content="A cinematic interactive journey through the warriors, conflicts, ideas, and transformations that shaped the history of the samurai."
+    />
+    <title>History of Samurai — An Interactive Journey Through Feudal Japan</title>
   </head>
   <body>
-    <div id="app"></div>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="site-nav container container--wide" aria-label="Primary navigation">
+        <a class="site-nav__brand" href="#hero">
+          <span class="site-nav__wordmark">SAMURAI</span>
+          <span class="site-nav__brand-label">A HISTORY IN MOTION</span>
+        </a>
+
+        <button
+          class="site-nav__toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-menu"
+          aria-label="Open navigation menu"
+        >
+          <span aria-hidden="true">MENU</span>
+        </button>
+
+        <div class="site-nav__drawer" id="primary-menu">
+          <ul class="site-nav__links" role="list">
+            <li><a href="#origins">Origins</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#bushido">Bushidō</a></li>
+            <li><a href="#weapons">Weapons</a></li>
+            <li><a href="#figures">Figures</a></li>
+            <li><a href="#legacy">Legacy</a></li>
+            <li><a href="#project">Project</a></li>
+          </ul>
+          <p class="wireframe-note site-nav__mobile-note">
+            FUTURE: FULL-SCREEN MOBILE MENU
+          </p>
+        </div>
+
+        <p class="wireframe-note site-nav__desktop-note">
+          FUTURE: FIXED NAV / BACKGROUND CHANGES AFTER SCROLL
+        </p>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="hero" aria-labelledby="hero-title">
+        <figure class="image-placeholder image-placeholder--hero hero__visual">
+          <div class="hero__visual-grid container" aria-hidden="true">
+            <div class="hero__visual-zone">
+              <div class="hero__subject-area">
+                <strong>HERO-01</strong>
+                <span>LONE SAMURAI / RIGHT-THIRD SUBJECT AREA</span>
+              </div>
+            </div>
+          </div>
+          <figcaption class="image-placeholder__caption">
+            <strong>HERO-01</strong>
+            <span>Lone Samurai</span>
+            <span>21:9 desktop / 4:5 mobile</span>
+            <span>Future: slow image scale</span>
+          </figcaption>
+        </figure>
+
+        <div class="hero__content container">
+          <div class="hero__copy-column">
+            <p class="section-eyebrow">A JOURNEY THROUGH FEUDAL JAPAN</p>
+            <h1 class="hero__title" id="hero-title">
+              <span class="hero__title-line">The Way of</span>
+              <span class="hero__title-line">the Samurai</span>
+            </h1>
+            <p class="hero__copy">
+              For centuries, the samurai stood at the center of Japan’s military and political
+              order. Their story is not only one of swords and battle, but also of service,
+              ambition, discipline, adaptation, and the difficult transition into a modern nation.
+            </p>
+            <div class="hero__details">
+              <p>c. 900–1877</p>
+              <a href="#origins">Scroll to begin</a>
+            </div>
+            <p class="wireframe-note hero__future-note">
+              FUTURE: SLOW IMAGE SCALE / SEQUENTIAL TEXT REVEAL / SCROLL INDICATOR
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="section origins" id="origins" aria-labelledby="origins-title">
+        <div class="origins__grid container">
+          <header class="section-header origins__header">
+            <div class="section-kicker">
+              <span class="section-index" aria-hidden="true">01</span>
+              <p class="section-eyebrow">BEYOND THE LEGEND</p>
+            </div>
+            <h2 class="section-heading" id="origins-title">Who Were the Samurai?</h2>
+          </header>
+
+          <p class="origins__opening body-large">
+            The samurai were not a single, unchanging type of warrior. Across almost a thousand
+            years, they served as mounted archers, provincial fighters, retainers, commanders,
+            officials, scholars, and members of a hereditary social class.
+          </p>
+
+          <figure class="image-placeholder image-placeholder--portrait origins__visual">
+            <div class="image-placeholder__label" aria-hidden="true">IMAGE PLACEHOLDER</div>
+            <figcaption class="image-placeholder__caption">
+              <strong>ORIGIN-01</strong>
+              <span>Mounted Samurai Archer</span>
+              <span>4:5 desktop / 4:5 mobile</span>
+              <span>Future: slow image parallax</span>
+            </figcaption>
+          </figure>
+
+          <div class="origins__body prose">
+            <p>
+              The word <em>samurai</em> is linked to the idea of service, while <em>bushi</em>
+              more broadly refers to warriors. The two terms are often used interchangeably
+              today, but the people they describe changed significantly across different periods
+              of Japanese history.
+            </p>
+            <p>
+              Early warrior families gained influence as the imperial court relied on armed
+              provincial elites to protect land, settle disputes, and enforce authority. Over
+              time, these military networks became powerful enough to challenge court aristocrats
+              and build governments led by warriors.
+            </p>
+          </div>
+
+          <aside class="fact-block origins__fact" aria-labelledby="popular-image-title">
+            <p class="fact-block__label" id="popular-image-title">THE POPULAR IMAGE</p>
+            <p>
+              The familiar image of a lone swordsman captures only part of the story. In many
+              early periods, elite samurai were especially associated with mounted archery, while
+              later armies relied heavily on spears, infantry formations, and firearms.
+            </p>
+          </aside>
+
+          <p class="pull-quote origins__quote">
+            “The samurai were shaped as much by administration and political service as by the
+            battlefield.”
+          </p>
+        </div>
+      </section>
+
+      <section class="section timeline-introduction" id="timeline" aria-labelledby="timeline-title">
+        <div class="container">
+          <header class="section-header timeline-introduction__header">
+            <div class="section-kicker">
+              <span class="section-index" aria-hidden="true">02</span>
+              <p class="section-eyebrow">THE RISE OF WARRIOR RULE</p>
+            </div>
+            <h2 class="section-heading" id="timeline-title">
+              A History Shaped by Service, Conflict, and Power
+            </h2>
+          </header>
+          <p class="body-large timeline-introduction__copy">
+            The samurai did not appear fully formed. Their identity developed through centuries
+            of changing warfare, landholding, political competition, and service to increasingly
+            powerful military leaders.
+          </p>
+        </div>
+      </section>
+    </main>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
