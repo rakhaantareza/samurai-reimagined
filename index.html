@@ -514,7 +514,8 @@
             <figure class="image-placeholder image-placeholder--landscape timeline-main__sticky-visual">
               <div class="image-placeholder__label" aria-hidden="true">STICKY VISUAL PLACEHOLDER</div>
               <figcaption class="image-placeholder__caption">
-                <strong>TIMELINE-01–08</strong>
+                <strong>TIMELINE VISUAL</strong>
+                <span>TIMELINE-01 through TIMELINE-08</span>
                 <span>Active era visual</span>
                 <span>Future sticky image region</span>
               </figcaption>
@@ -524,7 +525,11 @@
         </div>
       </section>
 
-      <section class="timeline-transition" aria-labelledby="timeline-transition-title">
+      <section
+        class="timeline-transition"
+        id="timeline-transition"
+        aria-labelledby="timeline-transition-title"
+      >
         <div class="timeline-transition__composition container">
           <figure class="image-placeholder image-placeholder--landscape timeline-transition__visual">
             <div class="image-placeholder__label" aria-hidden="true">IMAGE PLACEHOLDER</div>
@@ -704,7 +709,12 @@
           </div>
         </div>
 
-        <div class="weapons__viewport">
+        <div
+          class="weapons__viewport"
+          role="region"
+          aria-labelledby="weapons-title"
+          tabindex="0"
+        >
           <ol class="weapon-rail container" aria-label="Samurai weapons">
             <li class="weapon-rail__item">
               <article class="weapon-panel" aria-labelledby="weapon-yumi-title">
@@ -1455,8 +1465,19 @@
           </div>
 
           <nav class="project-links" aria-label="Project links">
-            <a href="#">View source on GitHub</a>
-            <a href="#">Visit the original 2022 website</a>
+            <a
+              href="https://github.com/rakhaantareza/samurai-reimagined"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Opens in a new tab"
+              >View source on GitHub</a
+            >
+            <a
+              href="https://rakhaantareza.github.io/history-of-samurai/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Visit the original 2022 website</a
+            >
           </nav>
         </div>
       </section>
@@ -1566,9 +1587,22 @@
           </p>
         </div>
         <nav class="site-footer__navigation" aria-label="Footer navigation">
-          <a href="#" aria-label="View source on GitHub">GitHub</a>
-          <a href="#" aria-label="Visit the original 2022 website">Original Project</a>
-          <a href="#">Portfolio</a>
+          <a
+            href="https://github.com/rakhaantareza/samurai-reimagined"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Opens in a new tab"
+            aria-label="View source on GitHub (opens in a new tab)"
+            >GitHub</a
+          >
+          <a
+            href="https://rakhaantareza.github.io/history-of-samurai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit the original 2022 website"
+            >Original Project</a
+          >
+          <span aria-disabled="true"><strong>Portfolio — Coming Soon</strong></span>
           <a href="#hero" aria-label="Return to the top of the page">Back to Top</a>
         </nav>
         <div class="site-footer__meta">

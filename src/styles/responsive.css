@@ -666,7 +666,9 @@
   }
 
   .weapons__viewport {
-    overflow: clip;
+    overflow-x: auto;
+    overflow-y: hidden;
+    overscroll-behavior-inline: contain;
   }
 
   .weapon-rail {
